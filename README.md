@@ -1,49 +1,49 @@
 Kiln Controller
 ==========
 
-Turns a Raspberry Pi into an inexpensive, web-enabled kiln controller.
+Transforme un Raspberry Pi en un contrôleur de four économique et connecté à Internet.
+
 
 ## Features
 
-  * supports [many boards](https://github.com/jbruce12000/kiln-controller/blob/main/docs/supported-boards.md) into addition to raspberry pi
-  * supports Adafruit MAX31856 and MAX31855 thermocouple boards
-  * support for K, J, N, R, S, T, E, or B type thermocouples
-  * easy to create new kiln schedules and edit / modify existing schedules
-  * no limit to runtime - fire for days if you want
-  * view status from multiple devices at once - computer, tablet etc
-  * real-time firing cost estimate
-  * real-time heating rate displayed in degrees per hour
-  * supports PID parameters you tune to your kiln
-  * monitors temperature in kiln after schedule has ended
-  * api for starting and stopping at any point in a schedule
-  * accurate simulation
-  * support for shifting schedule when kiln cannot heat quickly enough
-  * support for skipping first part of profile to match current kiln temperature
-  * prevents integral wind-up when temperatures not near the set point
-  * automatic restarts if there is a power outage or other event
-  * support for a watcher to page you via slack if you kiln is out of whack
-  * easy scheduling of future kiln runs
+  * Prise en charge de [nombreuses cartes](https://github.com/jbruce12000/kiln-controller/blob/main/docs/supported-boards.md) en plus du raspberry pi
+  * Compatible avec les cartes thermocouples Adafruit MAX31856 et MAX31855
+  * prise en charge des thermocouples de type K, J, N, R, S, T, E ou B
+  * Il est facile de créer de nouveaux programmes de cuisson et de modifier les programmes existants.
+  * Durée d'exécution illimitée : Chauffez pendant des jours si vous le souhaitez
+  * Afficher l'état depuis plusieurs appareils simultanément (ordinateur, tablette, etc.).
+  * estimation en temps réel du coût de tir
+  * taux de chauffage en temps réel affiché en degrés par heure
+  * prend en charge les paramètres PID que vous réglez sur votre four
+  * surveille la température du four après la fin du programme.
+  * API permettant de démarrer et d'arrêter à tout moment une planification
+  * simulation précise
+  * assistance pour le décalage des horaires lorsque le four ne peut pas chauffer assez rapidement
+  * prise en charge du saut de la première partie du profil pour correspondre à la température actuelle du four
+  * empêche l'emballement du système lorsque les températures ne sont pas proches du point de consigne.
+  * redémarrages automatiques en cas de panne de courant ou autre événement
+  * assistance pour qu'un observateur vous avertisse via Slack si votre four est déréglé
+  * Planification simplifiée des cycles de cuisson futurs
 
 
-**Run Kiln Schedule**
+**Programme de fonctionnement du four**
 
 ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/kiln-running.png)
 
-**Edit Kiln Schedule**
+**Modifier le programme du four**
 
 ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/kiln-schedule.png)
 
-## Hardware
+## Matériel
 
-### Parts
+### Composants
 
 | Image | Hardware | Description |
 | ------| -------- | ----------- |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Virtually any Raspberry Pi will work since only a few GPIO pins are being used. Any board supported by [blinka](https://circuitpython.org/blinka) and has SPI should work. You'll also want to make sure the board has wifi. If you use something other than a Raspberry PI and get it to work, let me know. |
+| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Pratiquement n'importe quel Raspberry Pi fera l'affaire, car seules quelques broches GPIO sont utilisées. Toute carte compatible avec [blinka](https://circuitpython.org/blinka) et dotée d'une interface SPI devrait fonctionner. Assurez-vous également que la carte dispose du Wi-Fi. |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/max31855.png) | [Adafruit MAX31855](https://www.adafruit.com/product/269) or [Adafruit MAX31856](https://www.adafruit.com/product/3263) | Thermocouple breakout board |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/k-type-thermocouple.png) | [Thermocouple](https://www.auberins.com/index.php?main_page=product_info&cPath=20_3&products_id=39) | Invest in a heavy duty, ceramic thermocouple designed for kilns. Make sure the type will work with your thermocouple board. Adafruit-MAX31855 works only with K-type. Adafruit-MAX31856 is flexible and works with many types, but folks usually pick S-type. |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/breadboard.png) | Breadboard | breadboard, ribbon cable, connector for pi's gpio pins & connecting wires |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/ssr.png) | Solid State Relay | Zero crossing, make sure it can handle the max current of your kiln. Even if the kiln is 220V you can buy a single [3 Phase SSR](https://www.auberins.com/index.php?main_page=product_info&cPath=2_30&products_id=331). It's like having 3 SSRs in one.  Relays this big always require a heat sink. |
+| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/k-type-thermocouple.png) | [Thermocouple](https://www.auberins.com/index.php?main_page=product_info&cPath=20_3&products_id=39) | Investissez dans un thermocouple céramique haute performance conçu pour les fours. Assurez-vous de sa compatibilité avec votre carte de thermocouple. La carte Adafruit-MAX31855 fonctionne uniquement avec les thermocouples de type K. La carte Adafruit-MAX31856 est plus polyvalente et compatible avec de nombreux types, mais le type S est généralement privilégié. |
+| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/ssr.png) | Solid State Relay | Au niveau du passage par zéro, assurez-vous que le relais puisse supporter le courant maximal de votre four. Même si le four fonctionne en 220 V, un seul  [relais statique triphasé](https://www.auberins.com/index.php?main_page=product_info&cPath=2_30&products_id=331) suffit. C'est comme avoir trois relais statiques en un. Les relais de cette taille nécessitent toujours un dissipateur thermique. |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/ks-1018.png) | Electric Kiln | There are many old electric kilns on the market that don't have digital controls. You can pick one up on the used market cheaply.  This controller will work with 110V or 220V (pick a proper SSR). My kiln is a Skutt KS-1018. |
 
 ### Schematic
