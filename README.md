@@ -66,13 +66,13 @@ My controller plugs into the wall, and the kiln plugs into the controller.
 
 Download [Raspberry PI OS](https://www.raspberrypi.org/software/). Use Rasberry PI Imaging tool to install the OS on an SD card. Boot the OS, open a terminal and...
 
-    $ sudo apt-get update
-    $ sudo apt-get dist-upgrade
-    $ git clone https://github.com/greenxav/kiln-controller
-    $ cd kiln-controller
-    $ python3 -m venv venv
-    $ source venv/bin/activate
-    $ pip install -r requirements.txt
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    git clone https://github.com/greenxav/kiln-controller
+    cd kiln-controller
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
 
 *Note: The above steps work on ubuntu if you prefer*
 
@@ -80,7 +80,8 @@ Download [Raspberry PI OS](https://www.raspberrypi.org/software/). Use Rasberry 
 
 If you're done playing around with simulations and want to deploy the code on a Raspberry PI to control a kiln, you'll need to do this in addition to the stuff listed above:
 
-    $ sudo raspi-config
+    sudo raspi-config
+    
     interfacing options -> SPI -> Select Yes to enable
     select reboot
 
@@ -100,19 +101,19 @@ All parameters are defined in config.py. You need to read through config.py care
 
 After you've completed connecting all the hardware together, there are scripts to test the thermocouple and to test the output to the solid state relay. Read the scripts below and then start your testing. First, activate the virtual environment like so...
 
-     $ source venv/bin/activate
+     source venv/bin/activate
 
 then test the thermocouple with:
 
-     $ ./test-thermocouple.py
+     ./test-thermocouple.py
 
 then test the output with:
 
-     $ ./test-output.py
+     ./test-output.py
 
 and you can use this script to examine each pin's state including input/output/voltage on your board:
 
-     $ ./gpioreadall.py
+     ./gpioreadall.py
 
 ## PID Tuning
 
@@ -124,12 +125,12 @@ There is a state view that can help with tuning. It shows the P,I, and D paramet
 
 ### Server Startup
 
-    $ source venv/bin/activate; ./kiln-controller.py
+    source venv/bin/activate; ./kiln-controller.py
 
 ### Autostart Server onBoot
 If you want the server to autostart on boot, run the following command:
 
-    $ /home/pi/kiln-controller/start-on-boot
+    /home/xavier/kiln-controller/start-on-boot
 
 ### Client Access
 
