@@ -66,6 +66,7 @@ My controller plugs into the wall, and the kiln plugs into the controller.
 
 Download [Raspberry PI OS](https://www.raspberrypi.org/software/). Use Rasberry PI Imaging tool to install the OS on an SD card. Boot the OS, open a terminal and...
 
+    sudo apt-get install git
     sudo apt-get update
     sudo apt-get dist-upgrade
     git clone https://github.com/greenxav/kiln-controller
