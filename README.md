@@ -78,16 +78,6 @@ Bookworm 32-bit on Raspberry Pi 3 B+
     source venv/bin/activate
     pip install -r requirements.txt
 
-
-Uninstall RPi.GPIO:
-
-    pip uninstall RPi.GPIO
-
-Install lgpio shim:
-
-    pip install rpi-lgpio
-
-
 *Note: The above steps work on ubuntu if you prefer*
 
 ### Raspberry PI deployment
