@@ -31,7 +31,7 @@ Turns a Raspberry Pi into an inexpensive, web-enabled kiln controller.
 
 **Edit Kiln Schedule**
 
-![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/kiln-schedule.png)
+![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/kiln-schedule.png)
 
 ## Hardware
 
@@ -39,8 +39,8 @@ Turns a Raspberry Pi into an inexpensive, web-enabled kiln controller.
 
 | Image | Hardware | Description |
 | ------| -------- | ----------- |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Virtually any Raspberry Pi will work since only a few GPIO pins are being used. Any board supported by [blinka](https://circuitpython.org/blinka) and has SPI should work. You'll also want to make sure the board has wifi. If you use something other than a Raspberry PI and get it to work, let me know. |
-| ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/max31855.png) | [Adafruit MAX31855](https://www.adafruit.com/product/269) or [Adafruit MAX31856](https://www.adafruit.com/product/3263) | Thermocouple breakout board |
+| ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Virtually any Raspberry Pi will work since only a few GPIO pins are being used. Any board supported by [blinka](https://circuitpython.org/blinka) and has SPI should work. You'll also want to make sure the board has wifi. If you use something other than a Raspberry PI and get it to work, let me know. |
+| ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/max31855.png) | [Adafruit MAX31855](https://www.adafruit.com/product/269) or [Adafruit MAX31856](https://www.adafruit.com/product/3263) | Thermocouple breakout board |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/k-type-thermocouple.png) | [Thermocouple](https://www.auberins.com/index.php?main_page=product_info&cPath=20_3&products_id=39) | Invest in a heavy duty, ceramic thermocouple designed for kilns. Make sure the type will work with your thermocouple board. Adafruit-MAX31855 works only with K-type. Adafruit-MAX31856 is flexible and works with many types, but folks usually pick S-type. |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/breadboard.png) | Breadboard | breadboard, ribbon cable, connector for pi's gpio pins & connecting wires |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/ssr.png) | Solid State Relay | Zero crossing, make sure it can handle the max current of your kiln. Even if the kiln is 220V you can buy a single [3 Phase SSR](https://www.auberins.com/index.php?main_page=product_info&cPath=2_30&products_id=331). It's like having 3 SSRs in one.  Relays this big always require a heat sink. |
