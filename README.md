@@ -1,45 +1,46 @@
 Kiln Controller
 ==========
 
-Turns a Raspberry Pi into an inexpensive, web-enabled kiln controller.
+Transforme un Raspberry Pi en un contrôleur de four à poterie et connecté à Internet.
 
-## Features
+## Caractéristiques
 
-  * supports [many boards](https://github.com/greenxav/kiln-controller/blob/main/docs/supported-boards.md) into addition to raspberry pi
-  * supports Adafruit MAX31856 and MAX31855 thermocouple boards
-  * support for K, J, N, R, S, T, E, or B type thermocouples
-  * easy to create new kiln schedules and edit / modify existing schedules
-  * no limit to runtime - fire for days if you want
-  * view status from multiple devices at once - computer, tablet etc
-  * real-time firing cost estimate
-  * real-time heating rate displayed in degrees per hour
-  * supports PID parameters you tune to your kiln
-  * monitors temperature in kiln after schedule has ended
-  * api for starting and stopping at any point in a schedule
-  * accurate simulation
-  * support for shifting schedule when kiln cannot heat quickly enough
-  * support for skipping first part of profile to match current kiln temperature
-  * prevents integral wind-up when temperatures not near the set point
-  * automatic restarts if there is a power outage or other event
-  * support for a watcher to page you via slack if you kiln is out of whack
-  * easy scheduling of future kiln runs
+  * Compatible avec de [nombreuses cartes](https://github.com/greenxav/kiln-controller/blob/main/docs/supported-boards.md) en plus du Raspberry Pi
+  * Compatible avec les cartes thermocouples Adafruit MAX31856 et MAX31855
+  * Compatible avec les thermocouples de type K, J, N, R, S, T, E et B
+  * Création et modification simplifiées des programmes de cuisson
+  * 
+  * Durée de fonctionnement illimitée : cuisson pendant plusieurs jours
+  * Visualisation simultanée de l'état du programme depuis plusieurs appareils (ordinateur, tablette, etc.)
+  * Estimation du coût de cuisson en temps réel
+  * Affichage de la vitesse de chauffe en temps réel (degrés par heure)
+  * Compatible avec les paramètres PID personnalisables pour votre four
+  * Surveillance de la température du four après la fin du programme
+  * API pour démarrer et arrêter un programme à tout moment
+  * Simulation précise
+  * Possibilité de décaler le programme si le four ne chauffe pas assez rapidement
+  * Possibilité de sauter la première partie du profil pour correspondre à la température actuelle du four
+  * Empêche l'emballement du programme lorsque les températures ne sont pas suffisantes À proximité du point de consigne
+  * Redémarrages automatiques en cas de coupure de courant ou autre incident
+  * Possibilité de vous alerter via Slack en cas de dysfonctionnement du four
+  * Programmation simplifiée des cycles de cuisson futurs
 
 
-**Run Kiln Schedule**
+**Programme d'exécution du four**
 
 ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/kiln-running.png)
 
-**Edit Kiln Schedule**
+**Edition des courbes de chauffe**
 
 ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/kiln-schedule.png)
 
 ## Hardware
 
-### Parts
+### Parties
 
 | Image | Hardware | Description |
 | ------| -------- | ----------- |
-| ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Virtually any Raspberry Pi will work since only a few GPIO pins are being used. Any board supported by [blinka](https://circuitpython.org/blinka) and has SPI should work. You'll also want to make sure the board has wifi. If you use something other than a Raspberry PI and get it to work, let me know. |
+| ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/rpi.png) | [Raspberry Pi](https://www.adafruit.com/category/105) | Pratiquement n'importe quel Raspberry Pi fonctionnera, car seules quelques broches GPIO sont utilisées. Toute carte prise en charge par [blinka](https://circuitpython.org/blinka) and has SPI should work. You'll also want to make sure the board has wifi. If you use something other than a Raspberry PI and get it to work, let me know. |
 | ![Image](https://github.com/greenxav/kiln-controller/blob/main/public/assets/images/max31855.png) | [Adafruit MAX31855](https://www.adafruit.com/product/269) or [Adafruit MAX31856](https://www.adafruit.com/product/3263) | Thermocouple breakout board |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/k-type-thermocouple.png) | [Thermocouple](https://www.auberins.com/index.php?main_page=product_info&cPath=20_3&products_id=39) | Invest in a heavy duty, ceramic thermocouple designed for kilns. Make sure the type will work with your thermocouple board. Adafruit-MAX31855 works only with K-type. Adafruit-MAX31856 is flexible and works with many types, but folks usually pick S-type. |
 | ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/breadboard.png) | Breadboard | breadboard, ribbon cable, connector for pi's gpio pins & connecting wires |
