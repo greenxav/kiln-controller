@@ -66,7 +66,7 @@ My controller plugs into the wall, and the kiln plugs into the controller.
 ### Raspberry PI OS
 
 Download [Raspberry PI OS](https://www.raspberrypi.org/software/). Use Rasberry PI Imaging tool to install the OS on an SD card. Boot the OS, open a terminal and... 
-Bookworm 32-bit on Raspberry Pi 3 B+
+Bookworm 64 or 32-bit on Raspberry Pi 3 B+
 
     sudo apt-get update
     sudo apt-get install build-essential python3-dev
