@@ -51,11 +51,11 @@ Transforme un Raspberry Pi en un contrôleur de four à poterie et connecté à 
 
 Le Raspberry Pi possède trois broches GPIO connectées à la puce MAX31855. La broche D0 est configurée en entrée, tandis que les broches CS et CLK sont des sorties. Le signal commandant le relais statique est initialement une sortie GPIO qui pilote un transistor faisant office d'interrupteur. Ce transistor fournit une tension de 5 V et un courant suffisant pour commander le relais statique. Comme seules quatre broches GPIO sont utilisées, n'importe quel Raspberry Pi peut convenir pour ce projet. Voir [le fichier configuration](https://github.com/jbruce12000/kiln-controller/blob/main/config.py) pour la configuration des broches GPIO.
 
-My controller plugs into the wall, and the kiln plugs into the controller. 
+Mon contrôleur se branche sur la prise murale, et le four se branche sur le contrôleur.
 
-**WARNING** This project involves high voltages and high currents. Please make sure that anything you build conforms to local electrical codes and aligns with industry best practices.
+**AVERTISSEMENT** Ce projet implique des hautes tensions et de forts courants. Veuillez vous assurer que tout ce que vous construisez est conforme aux codes électriques locaux et respecte les meilleures pratiques de l'industrie.
 
-**Note:** The GPIO configuration in this schematic does not match the defaults, check [config](https://github.com/jbruce12000/kiln-controller/blob/main/config.py) and make sure the gpio pin configuration aligns with your actual connections.
+**Remarque :** La configuration GPIO dans ce schéma ne correspond pas aux valeurs par défaut, vérifiez la configuration et assurez-vous que la configuration des broches GPIO correspond à vos connexions réelles.
 
 ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/schematic.png)
 
