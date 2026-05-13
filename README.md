@@ -59,14 +59,14 @@ Mon contrôleur se branche sur la prise murale, et le four se branche sur le con
 
 ![Image](https://github.com/jbruce12000/kiln-controller/blob/main/public/assets/images/schematic.png)
 
-*Note: I tried to power my ssr directly using a gpio pin, but it did not work. My ssr required 25ma to switch and rpi's gpio could only provide 16ma. YMMV.*
+*Remarque : j'ai essayé d'alimenter mon SSR directement en utilisant une broche GPIO, mais cela n'a pas fonctionné. Mon SSR nécessitait 25 mA pour commuter et le GPIO du RPi ne pouvait fournir que 16 mA. Votre expérience peut varier.*
 
-## Software 
+## Logiciel
 
 ### Raspberry PI OS
 
-Download [Raspberry PI OS](https://www.raspberrypi.org/software/). Use Rasberry PI Imaging tool to install the OS on an SD card. Boot the OS, open a terminal and... 
-Bookworm 64 or 32-bit on Raspberry Pi 3 B+
+Téléchargez [Raspberry PI OS](https://www.raspberrypi.org/software/). Utilisez l'outil d'imagerie Raspberry PI pour installer le système d'exploitation sur une carte SD. Pour moi, c'est Bookworm 64 ou 32 bits sur Raspberry Pi 3 B+.
+Démarrez le système d'exploitation, ouvrez un terminal et... 
 
     sudo apt-get update
     sudo apt-get install build-essential python3-dev
@@ -79,11 +79,11 @@ Bookworm 64 or 32-bit on Raspberry Pi 3 B+
     source venv/bin/activate
     pip install -r requirements.txt
 
-*Note: The above steps work on ubuntu if you prefer*
+*Remarque : Les étapes ci-dessus fonctionnent sur Ubuntu si vous préférez*
 
-### Raspberry PI deployment
+### Déploiement Raspberry Pi
 
-If you're done playing around with simulations and want to deploy the code on a Raspberry PI to control a kiln, you'll need to do this in addition to the stuff listed above:
+Si vous avez fini de vous amuser avec les simulations et que vous voulez déployer le code sur un Raspberry PI pour contrôler un four, vous devrez faire cela en plus des éléments listés ci-dessus :
 
     sudo raspi-config
     
