@@ -5,7 +5,7 @@ import busio
 
 ########################################################################
 #
-#   General options
+#   Options générales
 
 ### Logging
 log_level = logging.INFO
