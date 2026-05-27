@@ -71,7 +71,6 @@ Démarrez le système d'exploitation, ouvrez un terminal et...
     sudo apt-get update
     sudo apt-get install build-essential python3-dev
     sudo apt-get install git
-    sudo apt-get update
     sudo apt-get dist-upgrade
     git clone https://github.com/greenxav/kiln-controller
     cd kiln-controller
