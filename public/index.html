@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
- <title>Kiln Controller</title>
+ <title>Four à Zaza</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
  <script src="assets/js/jquery-1.10.2.min.js"></script>
@@ -27,11 +27,11 @@
  <div class="container">
   <div id="status">
    <div class="ds-title-panel">
-    <div class="ds-title">Sensor Temp</div>
-    <div class="ds-title">Target Temp</div>
-    <div class="ds-title">Heat Rate</div>
-    <div class="ds-title">Cost</div>
-    <div class="ds-title ds-state pull-right" style="border-left: 1px solid #ccc;">Status</div>
+    <div class="ds-title">Temp. Capteur</div>
+    <div class="ds-title">Temp. Cible</div>
+    <div class="ds-title">Taux de chaleur</div>
+    <div class="ds-title">Coût</div>
+    <div class="ds-title ds-state pull-right" style="border-left: 1px solid #ccc;">Etat</div>
    </div>
    <div class="clearfix"></div>
    <div class="ds-panel">
@@ -60,17 +60,17 @@
     </div>
    <div id="btn_controls" class="pull-right" style="margin-top: 3px">
     <div id="nav_start" class="btn-group" style="display:none">
-     <button type="button" class="btn btn-default" style="visibility: hidden;"  onclick="runTaskSimulation();">Simulate</button>
-     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#jobSummaryModal"><span class="glyphicon glyphicon-play"></span> Start</button>
+     <button type="button" class="btn btn-default" style="visibility: hidden;"  onclick="runTaskSimulation();">Simuler</button>
+     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#jobSummaryModal"><span class="glyphicon glyphicon-play"></span>Démarrer</button>
     </div>
-    <button id="nav_stop" type="button" class="btn btn-danger" onclick="abortTask()" style="display:none" ><span class="glyphicon glyphicon-stop"></span> Stop</button>
+    <button id="nav_stop" type="button" class="btn btn-danger" onclick="abortTask()" style="display:none" ><span class="glyphicon glyphicon-stop"></span>Arréter</button>
    </div>
     <div id="edit" style="display:none;">
      <div class="input-group">
       <span class="input-group-addon">Schedule Name</span>
       <input id="form_profile_name" type="text" class="form-control" />
       <span class="input-group-btn">
-        <button class="btn btn-success" type="button" onclick="saveProfile();">Save</button>
+        <button class="btn btn-success" type="button" onclick="saveProfile();">Sauvegarde</button>
         <button id="btn_exit" type="button" class="btn btn-default" onclick="leaveEditMode()"><span class="glyphicon glyphicon-remove"></span></button>
       </span>
      </div>
@@ -99,19 +99,19 @@
    <div class="modal-content">
     <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h3 class="modal-title" id="jobSummaryModalLabel">Task Overview</h3>
+     <h3 class="modal-title" id="jobSummaryModalLabel">Aperçu des tâches</h3>
     </div>
     <div class="modal-body">
      <table class="table table-bordered">
-      <tr><td>Selected Profile</td><td><b><span id="sel_prof"></span></b></td></tr>
-      <tr><td>Estimated Runtime</td><td><b><span id="sel_prof_eta"></span></b></td></tr>
-      <tr><td>Estimated Power consumption</td><td><b><span id="sel_prof_cost"></span></b></td></tr>
+      <tr><td>Profil sélectionné</td><td><b><span id="sel_prof"></span></b></td></tr>
+      <tr><td>Durée d'exécution estimée</td><td><b><span id="sel_prof_eta"></span></b></td></tr>
+      <tr><td>Consommation électrique estimée</td><td><b><span id="sel_prof_cost"></span></b></td></tr>
      </table>
     </div>
     <div class="modal-footer">
      <div class="btn-group" style="width: 100%">
-      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">No, take me back</button>
-      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="runTask()">Yes, start the Run</button>
+      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">Non, retour arrière</button>
+      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="runTask()">Oui, commencer la cuisson</button>
      </div>
     </div>
    </div>
@@ -123,15 +123,15 @@
    <div class="modal-content">
     <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h3 class="modal-title" id="delProfileModalLabel">Delete this profile?</h3>
+     <h3 class="modal-title" id="delProfileModalLabel">Effacer ce profil?</h3>
     </div>
     <div class="modal-body">
-     Do your really want to delete this profile?
+     Voulez-vous vraiment Effacer ce profil?
     </div>
     <div class="modal-footer">
      <div class="btn-group" style="width: 100%">
-      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">No, take me back</button>
-      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="deleteProfile()">Yes, delete the profile</button>
+      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">Non, retour arrière</button>
+      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="deleteProfile()">Oui, effacez le profil</button>
      </div>
     </div>
    </div>
@@ -143,15 +143,15 @@
    <div class="modal-content">
     <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h3 class="modal-title" id="overwriteProfileModalLabel">Overwrite this profile?</h3>
+     <h3 class="modal-title" id="overwriteProfileModalLabel">Ecraser ce profil?</h3>
     </div>
     <div class="modal-body">
-     Do your really want to overwrite this profile?
+     Voulez-vous vraiment écraser ce profil?
     </div>
     <div class="modal-footer">
      <div class="btn-group" style="width: 100%">
-      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">No, take me back</button>
-      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="deleteProfile()">Yes, delete the profile</button>
+      <button type="button" class="btn btn-danger" style="width: 50%" data-dismiss="modal">Non, retour arrière</button>
+      <button type="button" class="btn btn-success" style="width: 50%" data-dismiss="modal" onclick="deleteProfile()">Oui, écraser le profil</button>
      </div>
     </div>
    </div>
